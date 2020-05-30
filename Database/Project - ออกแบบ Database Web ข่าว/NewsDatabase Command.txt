@@ -1,0 +1,17 @@
+
+create table NewsHeader(
+NewsID int NOT NULL,
+NewsTitle varchar(255),
+NewsDate datetime,
+unique(NewsID),
+);
+
+create table NewsContent(
+NewsID int NOT NULL,
+NewsContentID int NOT NULL,
+NewsContent varchar(255),
+NewsAuthor varchar(30),
+NewsDate datetime,
+unique(NewsContentID),
+foreign key (NewsID) references newsheader(NewsID)
+);
